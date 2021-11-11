@@ -12,6 +12,18 @@ export default new Router({
       path: "/",
       name: "home",
       component: Home
+    },
+    /////FESTIVALS/////
+    {
+      path: "/festivals",
+      name: "festivals_index",
+      component: () => import("./pages/festivals/Index.vue")
+    },
+    {
+      path: "/festivals/:id",
+      name: "festivals_show",
+      component: () => import("./pages/festivals/Show.vue")
     }
+    //////////////////
   ]
 });
