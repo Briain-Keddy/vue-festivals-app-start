@@ -4,7 +4,7 @@
     <b-container>
       <br />
       <b-row>
-        <router-view :loggedIn="loggedIn" v-on:login="setLoggedIn" />
+        <router-view :loggedIn="loggedIn" v-on:login="setLoggedIn" v-on:invalid-token="setLoggedOut" />
       </b-row>
       <MyFooter />
     </b-container>
@@ -37,6 +37,7 @@ export default {
     setLoggedOut(){
       localStorage.removeItem('token')
       this.loggedIn = false
+      this.$router.push({name: 'home'})
     }
   }
 };
