@@ -1,10 +1,10 @@
 <template>
   <div>
-    <MyNavBar :loggedIn="loggedIn" v-on:logout="setLoggedOut" />
+    <MyNavBar />
     <b-container>
       <br />
       <b-row>
-        <router-view :loggedIn="loggedIn" v-on:login="setLoggedIn" v-on:invalid-token="setLoggedOut" />
+        <router-view />
       </b-row>
       <MyFooter />
     </b-container>
@@ -23,22 +23,16 @@ export default {
   },
   data(){
     return{
-      loggedIn: false
     }
   },
   created(){
-    localStorage.getItem('token') ? this.loggedIn = true : this.loggedIn = false
+    if(localStorage.getItem('token')){
+      this.$store.commit('SET_LOGGED_IN_STATUS', true)
+    }else{
+      this.$store.commit('SET_LOGGED_IN_STATUS', false)
+    }
   },
   methods:{
-    setLoggedIn(token){
-      this.loggedIn = true
-      localStorage.setItem('token', token)
-    },
-    setLoggedOut(){
-      localStorage.removeItem('token')
-      this.loggedIn = false
-      this.$router.replace({name: 'home'})
-    }
   }
 };
 </script>
