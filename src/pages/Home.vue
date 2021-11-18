@@ -7,7 +7,7 @@
       <button @click="login()">Submit</button>
     </div>
     <p v-else>
-      You are log in
+      You are logged in
     </p>
   </b-col>
 </template>
