@@ -37,7 +37,7 @@ export default {
     setLoggedOut(){
       localStorage.removeItem('token')
       this.loggedIn = false
-      this.$router.push({name: 'home'})
+      this.$router.replace({name: 'home'})
     }
   }
 };
