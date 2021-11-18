@@ -1,7 +1,7 @@
 <template>
   <b-col>
     <h2>Welcome to the Cloud Festivals Website</h2>
-    <div v-if="!$store.state.loggedIn">
+    <div v-if="!loggedIn">
       <input type="email" v-model="form.email" /> <br>
       <input type="password" v-model="form.password" /><br>
       <button @click="login(form)">Submit</button>
@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex'
+import { mapActions, mapState } from 'vuex'
 
 export default {
   name: "Home",
@@ -26,6 +26,9 @@ export default {
         password: ""
       }
     }
+  },
+  computed:{
+    ...mapState(['loggedIn'])
   },
   methods:{
     ...mapActions(['login'])
