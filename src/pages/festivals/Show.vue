@@ -1,6 +1,7 @@
 <template>
   <b-col>
     <h2>Show Festival Page</h2>
+    <b-button :to="{ name: 'festivals_edit', params: {id: $route.params.id}}" class="float-right" variant="warning">Edit</b-button>
     <p>
         {{ festival.title }}
     </p>
