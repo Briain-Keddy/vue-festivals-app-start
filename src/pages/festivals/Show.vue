@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import axios from 'axios'
+import axios from '@/config'
 
 export default {
   name: "FestivalsShow",
@@ -28,7 +28,7 @@ export default {
       getData(){
           let token = localStorage.getItem('token')
           axios
-               .get(`http://festivals-api.herokuapp.com/api/festivals/${this.$route.params.id}`,
+               .get(`/festivals/${this.$route.params.id}`,
                {
                    headers: {
                        "Authorization": `Bearer ${token}` 
