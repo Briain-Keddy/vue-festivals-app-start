@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import axios from 'axios'
+import axios from '@/config'
 
 Vue.use(Vuex)
 
@@ -17,7 +17,7 @@ export default new Vuex.Store({
     actions:{
         login(context, credenials){
             axios
-           .post('https://festivals-api.herokuapp.com/api/users/login',{
+           .post('/users/login',{
              email: credenials.email,
              password: credenials.password
            })
