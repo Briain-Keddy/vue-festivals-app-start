@@ -20,14 +20,14 @@ export default new Router({
       component: () => import("./pages/festivals/Index.vue")
     },
     {
-      path: "/festivals/:id",
-      name: "festivals_show",
-      component: () => import("./pages/festivals/Show.vue")
-    },
-    {
       path: "/festivals/create",
       name: "festivals_create",
       component: () => import("./pages/festivals/Create.vue")
+    },
+    {
+      path: "/festivals/:id",
+      name: "festivals_show",
+      component: () => import("./pages/festivals/Show.vue")
     }
     //////////////////
   ]
