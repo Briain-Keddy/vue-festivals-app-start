@@ -76,7 +76,29 @@ export default {
             }
         }
     },
+    mounted(){
+        this.getData()
+    },
     methods: {
+        getData(){
+            let token = localStorage.getItem('token')
+            axios
+               .get(`/festivals/${this.$route.params.id}`,
+               {
+                   headers: {
+                       "Authorization": `Bearer ${token}` 
+                   }
+               })
+               .then(response => {
+                   console.log(response.data)
+                   this.form.title = response.data.title
+                   this.form.description = response.data.description
+                   this.form.city = response.data.city
+                   this.form.start_date = response.data.start_date
+                   this.form.end_date = response.data.end_date
+               })
+               .catch(error => console.log(error))
+        },
         submitForm(){
             let token = localStorage.getItem('token')
 
