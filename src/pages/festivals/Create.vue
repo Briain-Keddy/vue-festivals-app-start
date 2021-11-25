@@ -61,7 +61,7 @@
 </template>
 
 <script>
-import axios from 'axios'
+import axios from '@/config'
 
 export default {
     name: "FestivalsCreate",
@@ -80,7 +80,7 @@ export default {
         submitForm(){
             let token = localStorage.getItem('token')
 
-            axios.post(`http://festivals-api.herokuapp.com/api/festivals`, this.form, {
+            axios.post(`/festivals`, this.form, {
                 title: this.form.title,
                 description: this.form.description,
                 city: this.form.city,
