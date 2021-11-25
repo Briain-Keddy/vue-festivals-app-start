@@ -26,7 +26,7 @@ export default {
   },
   methods: {
       getData(){
-          let token =localStorage.getItem('token')
+          let token = localStorage.getItem('token')
           axios
                .get(`http://festivals-api.herokuapp.com/api/festivals/${this.$route.params.id}`,
                {
