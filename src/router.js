@@ -25,6 +25,11 @@ export default new Router({
       component: () => import("./pages/festivals/Create.vue")
     },
     {
+      path: "/festivals/:id/edit",
+      name: "festivals_edit",
+      component: () => import("./pages/festivals/Edit.vue")
+    },
+    {
       path: "/festivals/:id",
       name: "festivals_show",
       component: () => import("./pages/festivals/Show.vue")
