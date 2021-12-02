@@ -22,8 +22,8 @@ export default {
   data(){
     return{
       form:{
-        email: "",
-        password: ""
+        email: "admin@festivals.ie",
+        password: "secret"
       }
     }
   },
